@@ -1,9 +1,26 @@
-$color: gray;
-
-body {
-  background-color: $color;
+@import "variables";
+@import "login";
+html {
+  height: 100%;
 }
 
-::placeholder {
-  color: red;
+body {
+  background-color: $greyColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  .loginBox, .gameContainer {
+    display: none;
+  }
+  &.loggedOut {
+    .loginBox {
+      display: block;
+    }
+  }
+  &.loggedIn {
+    .gameContainer {
+      display: block;
+    }
+  }
 }
